@@ -15,7 +15,9 @@ This program is designed to process and analyze work hour data from Excel files 
 
 ## Usage
 
-To run program execute following command with proper arguments:
+1. Go to [Release](https://github.com/ewedj/EmployeesRanking/releases/) page to download latest build.
+
+2. To run program execute following command with proper arguments:
 `java -jar EmployeesRanking-1.0-SNAPSHOT-all.jar <OPTIONS>`
 
 OPTIONS:
@@ -27,7 +29,6 @@ OPTIONS:
 `-p` - Specify directory path that contains timesheet for employees (subdirectories included)
 
 `-l` - Specify locale (e.g., PL, EN) for ranking list output if applicable
-
 
 ## How to build jar
 
