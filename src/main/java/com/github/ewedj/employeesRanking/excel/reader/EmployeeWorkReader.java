@@ -37,17 +37,12 @@ public class EmployeeWorkReader {
 
         log.debug("Processing file for employeeName: {}", employeeName);
 
-        FileInputStream fileInputStream = null;
+        FileInputStream fileInputStream;
 
         try {
             fileInputStream = new FileInputStream(timesheetPath.toFile());
 
-//                Workbook employeeTimesheet = new XSSFWorkbook(fileInputStream);
-            Workbook employeeTimesheet = null;
-
-
-            employeeTimesheet = new HSSFWorkbook(fileInputStream);
-
+            Workbook employeeTimesheet = new HSSFWorkbook(fileInputStream);
 
             for (Sheet sheet : employeeTimesheet) {
                 String projectName = sheet.getSheetName();

@@ -32,4 +32,4 @@ OPTIONS:
 
 ## How to build jar
 
-Execute following command:`./gradlew shadowJar`. The jar file will be created in build/libs directory. 
+Execute following command:`./gradlew shadowJar`. The jar file will be created in `build/libs` directory. 
