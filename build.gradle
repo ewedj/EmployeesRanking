@@ -1,8 +1,10 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
-group = 'dubiel.jaros.ewelina'
+group = 'com.github.ewedj'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -10,8 +12,30 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.apache.poi:poi:5.2.5'
+    implementation 'org.apache.poi:poi-ooxml:5.2.5'
+
+    implementation 'commons-cli:commons-cli:1.8.0'
+
+    implementation 'org.apache.logging.log4j:log4j-to-slf4j:2.23.1' //org.apache.poi uses log4j ...
+    implementation 'org.slf4j:slf4j-api:2.0.13'
+    implementation 'ch.qos.logback:logback-classic:1.5.6'
+
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+java {
+    toolchain {
+        //due to using e.g. Locale.of(), records etc.
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClassName = 'com.github.ewedj.Main'
 }
 
 test {
